@@ -1,5 +1,6 @@
 from glob import glob
 import os
+from abc import ABCMeta, abstractmethod
 
 
 class FileReader(object):
@@ -45,68 +46,73 @@ class FileReader(object):
 
             return contents
 
-        class FileReadDirector(object):
-            def __init__(self, file_builder):
-                self.__fileBuilder = file_builder
 
-            def set_builder(self, file_builder):
-                self.__fileBuilder = file_builder
+class FileReadDirector(object):
+    def __init__(self, file_builder):
+        self.__fileBuilder = file_builder
 
-            def construct(self):
-                self.__fileBuilder.create_file()
-                self.__fileBuilder.read()
-                self.__fileBuilder.format()
+    def set_builder(self, file_builder):
+        self.__fileBuilder = file_builder
 
-        class File(object):
-            def __init__(self):
-                self.__contents = []
+    def construct(self):
+        self.__fileBuilder.create_file()
+        self.__fileBuilder.read()
+        self.__fileBuilder.format()
 
-            def set_contents(self, data):
-                self.__contents.append(data)
 
-            def get_contents(self):
-                return self.__contents
+class File(object):
+    def __init__(self):
+        self.__contents = []
 
-        class Builder(metaclass=ABCMeta):
-            def __init__(self):
-                self._file = None
-                # self._all_data_sets = []
+    def set_contents(self, data):
+        self.__contents.append(data)
 
-            def create_file(self):
-                self._file = File()
+    def get_contents(self):
+        return self.__contents
 
-            @abstractmethod
-            def read(self):
-                raise NotImplementedError
 
-            @abstractmethod
-            def format(self):
-                raise NotImplementedError
+class Builder(metaclass=ABCMeta):
+    def __init__(self):
+        self._file = None
+        # self._all_data_sets = []
 
-            def get_file(self):
-                # return self._all_data_sets
-                return self._file
+    def create_file(self):
+        self._file = File()
 
-        class TxtBuilder(Builder):
-            def __init__(self):
-                super().__init__()
-                self.__raw_files = []
+    @abstractmethod
+    def read(self):
+        raise NotImplementedError
 
-            def read(self):
-                filename_list = glob('*.txt')
-                print(filename_list)
+    @abstractmethod
+    def format(self):
+        raise NotImplementedError
 
-                for file in filename_list:
-                    with open(file, 'r') as f:
-                        contents = f.read()
-                        self.__raw_files.append(contents)
+    def get_file(self):
+        # return self._all_data_sets
+        return self._file
 
-            def format(self):
-                for file in self.__raw_files:
-                    data_sets = file.split('\n\n')
-                    for data_set in data_sets:
-                        # self._all_data_sets.append(data_set)
-                        self._file.set_contents(data_set)
+
+class TxtBuilder(Builder):
+    def __init__(self):
+        super().__init__()
+        self.__raw_files = []
+
+    def read(self):
+        filename_list = glob('*.txt')
+        print(filename_list)
+
+        for file in filename_list:
+            with open(file, 'r') as f:
+                contents = f.read()
+                self.__raw_files.append(contents)
+
+    def format(self):
+        for file in self.__raw_files:
+            data_sets = file.split('\n\n')
+            for data_set in data_sets:
+                # self._all_data_sets.append(data_set)
+                self._file.set_contents(data_set)
+
 
 if __name__ == '__main__':  # pragma: no cover
     import doctest
