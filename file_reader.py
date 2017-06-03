@@ -27,16 +27,86 @@ class FileReader(object):
                 except Exception as e:
                     print('fview:', e)
         else:
-            raw_file_list = []
-            filename_list = glob('*.txt')
-            print(filename_list)
-            for file in filename_list:
-                with open(file, 'r') as f:
-                    contents = f.read()
-                    data_sets = contents.split("\n\n")
+            # raw_file_list = []
+            # filename_list = glob('*.txt')
+            # print(filename_list)
+            # for file in filename_list:
+            #     with open(file, 'r') as f:
+            #         contents = f.read()
+            #         data_sets = contents.split("\n\n")
+            #         for data_set in data_sets:
+            #             raw_file_list.append(data_set)
+
+            builder = TxtBuilder()
+            director = FileReadDirector(builder)
+            director.construct()
+            file = builder.get_file()
+            contents = file.get_contents()
+
+            return contents
+
+        class FileReadDirector(object):
+            def __init__(self, file_builder):
+                self.__fileBuilder = file_builder
+
+            def set_builder(self, file_builder):
+                self.__fileBuilder = file_builder
+
+            def construct(self):
+                self.__fileBuilder.create_file()
+                self.__fileBuilder.read()
+                self.__fileBuilder.format()
+
+        class File(object):
+            def __init__(self):
+                self.__contents = []
+
+            def set_contents(self, data):
+                self.__contents.append(data)
+
+            def get_contents(self):
+                return self.__contents
+
+        class Builder(metaclass=ABCMeta):
+            def __init__(self):
+                self._file = None
+                # self._all_data_sets = []
+
+            def create_file(self):
+                self._file = File()
+
+            @abstractmethod
+            def read(self):
+                raise NotImplementedError
+
+            @abstractmethod
+            def format(self):
+                raise NotImplementedError
+
+            def get_file(self):
+                # return self._all_data_sets
+                return self._file
+
+        class TxtBuilder(Builder):
+            def __init__(self):
+                super().__init__()
+                self.__raw_files = []
+
+            def read(self):
+                filename_list = glob('*.txt')
+                print(filename_list)
+
+                for file in filename_list:
+                    with open(file, 'r') as f:
+                        contents = f.read()
+                        self.__raw_files.append(contents)
+
+            def format(self):
+                for file in self.__raw_files:
+                    data_sets = file.split('\n\n')
                     for data_set in data_sets:
-                        raw_file_list.append(data_set)
-            return raw_file_list
+                        # self._all_data_sets.append(data_set)
+                        self._file.set_contents(data_set)
 
 if __name__ == '__main__':  # pragma: no cover
     import doctest
