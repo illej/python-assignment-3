@@ -2,7 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2617758f-0e79-4360-a6ee-6c8131bcc2ef" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-data/test.db" afterPath="$PROJECT_DIR$/test-data/test.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.db" afterPath="$PROJECT_DIR$/test.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.coverage" afterPath="$PROJECT_DIR$/.coverage" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/coverage_html.js" afterPath="$PROJECT_DIR$/htmlcov/coverage_html.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/file_reader_py.html" afterPath="$PROJECT_DIR$/htmlcov/file_reader_py.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/index.html" afterPath="$PROJECT_DIR$/htmlcov/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/jquery.ba-throttle-debounce.min.js" afterPath="$PROJECT_DIR$/htmlcov/jquery.ba-throttle-debounce.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/jquery.hotkeys.js" afterPath="$PROJECT_DIR$/htmlcov/jquery.hotkeys.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/jquery.isonscreen.js" afterPath="$PROJECT_DIR$/htmlcov/jquery.isonscreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/jquery.min.js" afterPath="$PROJECT_DIR$/htmlcov/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/jquery.tablesorter.min.js" afterPath="$PROJECT_DIR$/htmlcov/jquery.tablesorter.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/serializer_py.html" afterPath="$PROJECT_DIR$/htmlcov/serializer_py.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/status.json" afterPath="$PROJECT_DIR$/htmlcov/status.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/style.css" afterPath="$PROJECT_DIR$/htmlcov/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/unittests_py.html" afterPath="$PROJECT_DIR$/htmlcov/unittests_py.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/validator_py.html" afterPath="$PROJECT_DIR$/htmlcov/validator_py.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validator.py" afterPath="$PROJECT_DIR$/validator.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,12 +37,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="visualiser.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/visualiser.py">
+      <file leaf-file-name="validator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/validator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-              <folding />
+            <state relative-caret-position="259">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,7 +79,6 @@
         <option value="$PROJECT_DIR$/serialiser.py" />
         <option value="$PROJECT_DIR$/serializer.py" />
         <option value="$PROJECT_DIR$/visualiser.py" />
-        <option value="$PROJECT_DIR$/validator.py" />
         <option value="$PROJECT_DIR$/fileview.py" />
         <option value="$PROJECT_DIR$/databaseview.py" />
         <option value="$PROJECT_DIR$/cmdview.py" />
@@ -69,13 +87,16 @@
         <option value="$PROJECT_DIR$/controller.py" />
         <option value="$PROJECT_DIR$/database.py" />
         <option value="$PROJECT_DIR$/unittests.py" />
+        <option value="$PROJECT_DIR$/../assignment-2/validator.py" />
+        <option value="$PROJECT_DIR$/validator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -98,11 +119,11 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assignment-2" />
+              <option name="myItemId" value="assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assignment-2" />
+              <option name="myItemId" value="assignment-3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -111,8 +132,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="G:/git/bin/git.exe" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
@@ -333,10 +354,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19256018" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20095949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -367,13 +388,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/file_reader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/unittests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5592">
@@ -392,7 +406,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="888">
           <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -456,7 +469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -514,7 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -579,7 +590,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,23 +622,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="27" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://G:/year 3 - semester 1/pr301 (adv programming)/Week02/code/cmd_console.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://G:/year 3 - semester 1/pr301 (adv programming)/Week02/code/cmd_console.py" />
     <entry file="file://$PROJECT_DIR$/view.py" />
     <entry file="file://$PROJECT_DIR$/dataparser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="19" column="41" lean-forward="false" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,11 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#100#1386#0" expanded="false" />
-            <element signature="e#100#367#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -648,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -656,10 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#2207#2605#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -667,7 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -675,15 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="52" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/validator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -691,17 +673,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="100" column="49" lean-forward="false" selection-start-line="100" selection-start-column="49" selection-end-line="100" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/visualiser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="39" lean-forward="false" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding />
+        <state relative-caret-position="450">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../assignment-2/validator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="56" column="54" lean-forward="false" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/validator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

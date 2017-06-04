@@ -1,4 +1,5 @@
 import re
+from abc import ABCMeta, abstractmethod
 
 
 class Validator(object):
@@ -54,6 +55,7 @@ class Validator(object):
         else:
             print('-- Data validation successful!')
             self.__valid_dicts_list.append(valid_dict)
+
 
 if __name__ == '__main__':  # pragma: no cover
     import doctest

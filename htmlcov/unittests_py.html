@@ -605,8 +605,9 @@
 <p id="n534" class="stm run hide_run"><a href="#n534">534</a></p>
 <p id="n535" class="stm run hide_run"><a href="#n535">535</a></p>
 <p id="n536" class="pln"><a href="#n536">536</a></p>
-<p id="n537" class="exc"><a href="#n537">537</a></p>
+<p id="n537" class="pln"><a href="#n537">537</a></p>
 <p id="n538" class="exc"><a href="#n538">538</a></p>
+<p id="n539" class="exc"><a href="#n539">539</a></p>
 
             </td>
             <td class="text">
@@ -661,7 +662,7 @@
 <p id="t49" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">controller</span><span class="op">.</span><span class="nam">commit</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t50" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">__stdout__</span><span class="strut">&nbsp;</span></p>
 <p id="t51" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t52" class="exc">    <span class="key">def</span> <span class="nam">concreter</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">abclass</span><span class="op">)</span><span class="op">:</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
+<p id="t52" class="exc">    <span class="key">def</span> <span class="nam">concreter</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">abclass</span><span class="op">)</span><span class="op">:</span>  <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t53" class="pln">        <span class="com"># """</span><span class="strut">&nbsp;</span></p>
 <p id="t54" class="pln">        <span class="com"># >>> import abc</span><span class="strut">&nbsp;</span></p>
 <p id="t55" class="pln">        <span class="com"># >>> class Abstract(metaclass=abc.ABCMeta):</span><span class="strut">&nbsp;</span></p>
@@ -675,7 +676,7 @@
 <p id="t63" class="pln">        <span class="com"># >>> c().bar() # doctest: +ELLIPSIS</span><span class="strut">&nbsp;</span></p>
 <p id="t64" class="pln">        <span class="com"># (&lt;abc_utils.Abstract object at 0x...>, (), {})</span><span class="strut">&nbsp;</span></p>
 <p id="t65" class="pln">        <span class="com"># """</span><span class="strut">&nbsp;</span></p>
-<p id="t66" class="exc">        <span class="key">if</span> <span class="key">not</span> <span class="str">"__abstractmethods__"</span> <span class="key">in</span> <span class="nam">abclass</span><span class="op">.</span><span class="nam">__dict__</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t66" class="exc">        <span class="key">if</span> <span class="str">"__abstractmethods__"</span> <span class="key">not</span> <span class="key">in</span> <span class="nam">abclass</span><span class="op">.</span><span class="nam">__dict__</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t67" class="exc">            <span class="key">return</span> <span class="nam">abclass</span><span class="strut">&nbsp;</span></p>
 <p id="t68" class="exc">        <span class="nam">new_dict</span> <span class="op">=</span> <span class="nam">abclass</span><span class="op">.</span><span class="nam">__dict__</span><span class="op">.</span><span class="nam">copy</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t69" class="exc">        <span class="key">for</span> <span class="nam">abstractmethod</span> <span class="key">in</span> <span class="nam">abclass</span><span class="op">.</span><span class="nam">__abstractmethods__</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -1146,8 +1147,9 @@
 <p id="t534" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">__stdout__</span><span class="strut">&nbsp;</span></p>
 <p id="t535" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertRegex</span><span class="op">(</span><span class="nam">text</span><span class="op">,</span> <span class="nam">regex</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t536" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t537" class="exc"><span class="key">if</span> <span class="nam">__name__</span> <span class="op">==</span> <span class="str">'__main__'</span><span class="op">:</span>  <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
-<p id="t538" class="exc">    <span class="nam">unittest</span><span class="op">.</span><span class="nam">main</span><span class="op">(</span><span class="nam">verbosity</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t537" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t538" class="exc"><span class="key">if</span> <span class="nam">__name__</span> <span class="op">==</span> <span class="str">'__main__'</span><span class="op">:</span>  <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
+<p id="t539" class="exc">    <span class="nam">unittest</span><span class="op">.</span><span class="nam">main</span><span class="op">(</span><span class="nam">verbosity</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -1158,7 +1160,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 13:08
+            created at 2017-06-04 20:13
         </p>
     </div>
 </div>
