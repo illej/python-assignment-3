@@ -16,16 +16,16 @@ class Controller(object):
                 # print("input: ", input)
                 if len(input_params) > 1:
                     if self.__validator.is_valid_column(input_params[1]):
-                        if self.__vis.is_valid_flag(input_params[0]):
-                            iterinput = iter(input_params)
-                            next(iterinput)
-                            for data_set in iterinput:
-                                data = self.__db.retrieve(data_set)
-                                clean_data = self.__parser.scrub_db_list(data)
-                                data_set_dict[data_set] = clean_data
-                            self.__vis.display_chart(input_params[0], data_set_dict)
-                        else:
-                            raise Exception("-- Invalid flag.")
+                        #if self.__vis.is_valid_flag(input_params[0]):
+                        iterinput = iter(input_params)
+                        next(iterinput)
+                        for data_set in iterinput:
+                            data = self.__db.retrieve(data_set)
+                            clean_data = self.__parser.scrub_db_list(data)
+                            data_set_dict[data_set] = clean_data
+                        self.__vis.display_chart(input_params[0], data_set_dict)
+                        #else:
+                            #raise Exception("-- Invalid flag.")
                     else:
                         raise Exception("-- Invalid data.")
                 else:
