@@ -1,13 +1,16 @@
 import os
-import csv
-from glob import glob
-from abc import ABCMeta, abstractmethod
 from file_read_director import FileReadDirector
 from txt_builder import TxtBuilder
 from csv_builder import CsvBuilder
 
 
 class FileReader(object):
+    def __init__(self):
+        self.__all_sets = []
+        self.__products = []
+        self.__director = FileReadDirector()
+        self.__builders = [TxtBuilder(),
+                           CsvBuilder()]
 
     def read_file(self, line):
         """
@@ -32,37 +35,19 @@ class FileReader(object):
                 except Exception as e:
                     print('fview:', e)
         else:
-            # raw_file_list = []
-            # filename_list = glob('*.txt')
-            # print(filename_list)
-            # for file in filename_list:
-            #     with open(file, 'r') as f:
-            #         contents = f.read()
-            #         data_sets = contents.split("\n\n")
-            #         for data_set in data_sets:
-            #             raw_file_list.append(data_set)
+            for builder in self.__builders:
+                self.__director.set_builder(builder)
+                self.__director.construct()
+                self.__products.append(builder.get_file())
 
-            all_sets = []
+            for product in self.__products:
+                self._add_to_all(product.get_contents())
 
-            txt_builder = TxtBuilder()
-            director = FileReadDirector(txt_builder)
-            director.construct()
-            txt_file = txt_builder.get_file()
-            txt_contents = txt_file.get_contents()
+            return self.__all_sets
 
-            for data_set in txt_contents:
-                all_sets.append(data_set)
-
-            csv_builder = CsvBuilder()
-            director.set_builder(csv_builder)
-            director.construct()
-            csv_file = csv_builder.get_file()
-            csv_contents = csv_file.get_contents()
-
-            for data_set in csv_contents:
-                all_sets.append(data_set)
-
-            return all_sets
+    def _add_to_all(self, contents):
+        for data_set in contents:
+            self.__all_sets.append(data_set)
 
 
 if __name__ == '__main__':  # pragma: no cover

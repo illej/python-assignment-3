@@ -1,6 +1,6 @@
 class FileReadDirector(object):
-    def __init__(self, file_builder):
-        self.__file_builder = file_builder
+    def __init__(self):
+        self.__file_builder = None
 
     def set_builder(self, file_builder):
         self.__file_builder = file_builder
