@@ -4,10 +4,10 @@ from chart_flyweight_factory import ChartFlyweightFactory
 
 class Visualiser(object):
     def __init__(self):
-        self.factory = ChartFlyweightFactory()
+        self.__factory = ChartFlyweightFactory()
 
     def display_chart(self, arg, data):
-        chart = self.factory.get_flyweight(arg)
+        chart = self.__factory.get_flyweight(arg)
         chart.add_data(data)
         chart.make_title(data)
         chart.render()

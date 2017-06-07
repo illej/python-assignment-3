@@ -4,7 +4,7 @@ import sys
 from controller import Controller
 from cmdview import CmdView
 from file_reader import FileReader
-from dataparser import DataParser
+from data_parser import DataParser
 from validator import Validator
 from database import Database
 from visualiser import Visualiser

@@ -10,7 +10,6 @@ class DataParser(object):
     def __init__(self):
         self.__data_dicts = []
 
-    # depricated
     def get_data(self):
         return self.__data_dicts
 
