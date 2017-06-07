@@ -1,5 +1,6 @@
-from glob import glob
 import os
+import csv
+from glob import glob
 from abc import ABCMeta, abstractmethod
 
 
@@ -38,13 +39,27 @@ class FileReader(object):
             #         for data_set in data_sets:
             #             raw_file_list.append(data_set)
 
-            builder = TxtBuilder()
-            director = FileReadDirector(builder)
-            director.construct()
-            file = builder.get_file()
-            contents = file.get_contents()
+            all_sets = []
 
-            return contents
+            txt_builder = TxtBuilder()
+            director = FileReadDirector(txt_builder)
+            director.construct()
+            txt_file = txt_builder.get_file()
+            txt_contents = txt_file.get_contents()
+
+            for data_set in txt_contents:
+                all_sets.append(data_set)
+
+            csv_builder = CsvBuilder()
+            director.set_builder(csv_builder)
+            director.construct()
+            csv_file = csv_builder.get_file()
+            csv_contents = csv_file.get_contents()
+
+            for data_set in csv_contents:
+                all_sets.append(data_set)
+
+            return all_sets
 
 
 class FileReadDirector(object):
@@ -64,7 +79,7 @@ class File(object):
     def __init__(self):
         self.__contents = []
 
-    def set_contents(self, data):
+    def add(self, data):
         self.__contents.append(data)
 
     def get_contents(self):
@@ -74,7 +89,7 @@ class File(object):
 class Builder(metaclass=ABCMeta):
     def __init__(self):
         self._file = None
-        # self._all_data_sets = []
+        self._raw_data = []
 
     def create_file(self):
         self._file = File()
@@ -88,14 +103,12 @@ class Builder(metaclass=ABCMeta):
         raise NotImplementedError
 
     def get_file(self):
-        # return self._all_data_sets
         return self._file
 
 
 class TxtBuilder(Builder):
     def __init__(self):
         super().__init__()
-        self.__raw_files = []
 
     def read(self):
         filename_list = glob('*.txt')
@@ -104,14 +117,37 @@ class TxtBuilder(Builder):
         for file in filename_list:
             with open(file, 'r') as f:
                 contents = f.read()
-                self.__raw_files.append(contents)
+                self._raw_data.append(contents)
 
     def format(self):
-        for file in self.__raw_files:
+        for file in self._raw_data:
             data_sets = file.split('\n\n')
             for data_set in data_sets:
-                # self._all_data_sets.append(data_set)
-                self._file.set_contents(data_set)
+                self._file.add(data_set)
+
+
+class CsvBuilder(Builder):
+    def __init__(self):
+        super().__init__()
+
+    def read(self):
+        filename_list = glob('*.csv')
+        print(filename_list)
+
+        for file in filename_list:
+            with open(file, 'r') as f:
+                reader = csv.DictReader(f)
+                data_list = list(reader)
+                self._raw_data.append(data_list)
+
+    def format(self):
+        for data_sets in self._raw_data:
+            for data_set in data_sets:
+                str_set = ''
+                for key, value in data_set.items():
+                    str_row = key.lower() + '=' + value + '\n'
+                    str_set += str_row
+                self._file.add(str_set)
 
 
 if __name__ == '__main__':  # pragma: no cover

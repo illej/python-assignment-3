@@ -1,7 +1,6 @@
 import pygal
 
 
-# TODO: would be nice to build titles in a separate function!
 class Visualiser(object):
     def __init__(self):
         self.__charts = {'-b': pygal.Bar(),
