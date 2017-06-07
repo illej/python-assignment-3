@@ -7,6 +7,7 @@ class Visualiser(object):
                          '-l': pygal.Line(),
                          '-p': pygal.Pie(),
                          '-r': pygal.Radar()}
+        self.test_fw()
 
     def display_chart(self, arg, data):
         obj = self.__charts[arg]
@@ -27,3 +28,33 @@ class Visualiser(object):
         if input_param in self.__charts:
             result = True
         return result
+
+    def test_fw(self):
+        factory = ChartFlyweightFactory()
+        chart = factory.get_flyweight('-b')
+        chart.say()
+
+
+class ChartFlyweightFactory(object):
+    def __init__(self):
+        self.pool = {}
+
+    def get_flyweight(self, key):
+        if key not in self.pool:
+            self.pool[key] = self.make_flyweight(key)
+        return self.pool[key]
+
+    def make_flyweight(self, key):
+        charts = {'-b': pygal.Bar,
+                  '-l': pygal.Line,
+                  '-p': pygal.Pie,
+                  '-r': pygal.Radar}
+        return ChartFlyweight(charts[key])
+
+
+class ChartFlyweight(object):
+    def __init__(self, chart):
+        self.object = chart()
+
+    def say(self):
+        print(self.object)
